@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<site>
+<localinfo sitename="seipsa" ftporrdsserver="FALSE" localroot="C:\Users\HP\Google Drive\seipsa\" assetfolder="C:\Users\HP\Google Drive\seipsa\SpryAssets\" imagefolder="" spacerfilepath="" refreshlocal="TRUE" autouploadfiles="FALSE" maintainsyncinfo="TRUE" rewritedocrellinks="FALSE" cache="TRUE" httpaddress="http://www.seipsasac.com/" relativeTo="DOCUMENT" caseSensitiveLinks="FALSE" curserver="webserver"/>
+<remoteinfo accesstype="ftp" host="ftp.seipsasac.com" remoteroot="www/" user="seipsa" pw="573972546871537F5B56" checkoutname="" emailaddress="" enablecheckin="FALSE" checkoutwhenopen="TRUE" usefirewall="FALSE" usepasv="FALSE" useSFTP="FALSE" useIpv6="FALSE" useftpoptimization="TRUE" usealternaterename="FALSE" pathNameCharacterSet="Windows-1252"/>
+<designnotes usedesignnotes="TRUE" sharedesignnotes="FALSE"/>
+<sitemap homepage="" pagesperrow="200" columnwidth="125" showdependentfiles="FALSE" showpagetitles="FALSE" showhiddenfiles="FALSE"/>
+<fileviewcolumns sharecolumns="FALSE">
+    <column name="Local Files" align="left" show="TRUE" share="FALSE" builtin="TRUE" localwidth="87" remotewidth="180" />
+    <column name="Notes" align="center" show="FALSE" share="FALSE" builtin="TRUE" localwidth="36" remotewidth="36" />
+    <column name="Size" align="right" show="TRUE" share="FALSE" builtin="TRUE" localwidth="40" remotewidth="-2" />
+    <column name="Type" align="left" show="TRUE" share="FALSE" builtin="TRUE" localwidth="60" remotewidth="60" />
+    <column name="Modified" align="left" show="TRUE" share="FALSE" builtin="TRUE" localwidth="102" remotewidth="102" />
+    <column name="Checked Out By" align="left" show="TRUE" share="FALSE" builtin="TRUE" localwidth="-1" remotewidth="-1" />
+</fileviewcolumns>
+<appserverinfo servermodel="PHP MySQL" urlprefix="http://localhost/" connectionsmigrated="FALSE" serverobjectsversion="1" defaultdoctype="HTML" accesstype="lan" remoteroot="C:/Users/HP/Google Drive/seipsa/" refreshremote="FALSE" testsvrbinaccesstype="none"/>
+<cloaking enabled="TRUE" patterns="TRUE">
+    <cloakedpattern pattern=".png"/>
+    <cloakedpattern pattern=".fla"/>
+    <cloakedpattern pattern=".less"/>
+</cloaking>
+<contributorintegration enabled="FALSE"/>
+</site>

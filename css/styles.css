@@ -1,0 +1,60 @@
+/* LESS Document for Seipsa's site */
+body {
+  background: url(../img/background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: #1f2710;
+}
+#header {
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 34px;
+  font-weight: bold;
+  color: #FFF;
+  text-align: center;
+  margin: 20px auto 30px auto;
+  padding: 20px;
+  border: solid 2px #FFF;
+  /*            width:940px;*/
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.jumbotron {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+h1 {
+  font-family: 'Exo 2', sans-serif;
+}
+p {
+  font-family: 'Open Sans', sans-serif;
+}
+header {
+  /*            height: 200px;*/
+  background-color: rgba(0, 0, 0, 0.6);
+  margin: 15px 0px 15px 0px;
+}
+#list-social {
+  color: white;
+}
+#list-social a {
+  color: white;
+}
+#branding img {
+  margin: 10px 0 5px 25px;
+  max-width: 600px;
+}
+@media (max-width: 767px) {
+  #branding img {
+    margin: 10px 0 5px 10px;
+    width: 70%;
+  }
+}
+#main {
+  background-color: white;
+  margin-top: 15px;
+}
+.features {
+  background-color: rgba(24, 67, 23, 0.2);
+  padding: 15px;
+}
