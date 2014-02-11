@@ -151,9 +151,9 @@ Launch demo modal
                     </a>
                 </div> <!-- .list-group -->
                 <div class="alert alert-danger"><i class="fa fa-cog fa-spin fa-2x"></i> Sitio en construcción...</div>
-                <div class="progress progress-striped">
-                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="23" aria-valuemin="0" aria-valuemax="100" style="width: 23%">
-                        <span class="sr-only">23% Complete</span>
+                <div class="progress progress-striped active">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="27" aria-valuemin="0" aria-valuemax="100" style="width: 27%">
+                        <span class="sr-only">27% Complete</span>
                     </div>
                 </div> <!-- .progress-bar -->
             </div> <!-- . col-md-12 -->
