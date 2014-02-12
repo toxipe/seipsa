@@ -8,7 +8,7 @@
         <meta name="author" content="">
         <link rel="shortcut icon" href="">
         <title>Acceso intranet - SEIPSA S.A.C.</title>
-<!-- Bootstrap -->
+        <!-- Bootstrap -->
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="../css/font-awesome.min.css">
         <link rel="stylesheet" href="../css/style_control.css">  

@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_list_unidad" value="name:id_unidad;datatype:int,name:activo;datatype:int,name:nombre_unidad;datatype:string,name:representante;datatype:string,name:lugar;datatype:string,name:telefonos;datatype:string,name:fecha_inicio;datatype:datetime,name:fecha_fin;datatype:datetime,name:fec_registro;datatype:datetime,name:auto_log;datatype:blob" />
+</info>

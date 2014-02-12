@@ -31,15 +31,11 @@ if (!function_exists("GetSQLValueString")) {
     }
 }
 
-$colname_resulta_busca = "-1";
-if (isset($_POST['ape_pat'])) {
-    $colname_resulta_busca = $_POST['ape_pat'];
-}
 mysql_select_db($database_seipsa, $seipsa);
-$query_resulta_busca = sprintf("SELECT * FROM personal WHERE ape_pat LIKE %s OR ape_mat LIKE %s OR nombres LIKE %s OR dni LIKE %s", GetSQLValueString($colname_resulta_busca . "%", "text"), GetSQLValueString($colname_resulta_busca . "%", "text"), GetSQLValueString($colname_resulta_busca . "%", "text"), GetSQLValueString($colname_resulta_busca, "text"));
-$resulta_busca = mysql_query($query_resulta_busca, $seipsa) or die(mysql_error());
-$row_resulta_busca = mysql_fetch_assoc($resulta_busca);
-$totalRows_resulta_busca = mysql_num_rows($resulta_busca);
+$query_list_unidad = "SELECT * FROM unidades ORDER BY id_unidad ASC";
+$list_unidad = mysql_query($query_list_unidad, $seipsa) or die(mysql_error());
+$row_list_unidad = mysql_fetch_assoc($list_unidad);
+$totalRows_list_unidad = mysql_num_rows($list_unidad);
 ?>
 <!doctype html>
 <html lang="es">
@@ -47,7 +43,7 @@ $totalRows_resulta_busca = mysql_num_rows($resulta_busca);
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Resultados de la búsqueda | SEIPSA S.A.C.</title>            
+        <title>Listado de UNIDADES | SEIPSA S.A.C.</title>            
         <!-- Bootstrap -->
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="../css/font-awesome.min.css">
@@ -67,28 +63,28 @@ $totalRows_resulta_busca = mysql_num_rows($resulta_busca);
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <?php include("assets/buscar_form.php"); ?>
                     <table class="table table-hover table-condensed">
                         <thead>
-                            <tr class="success">
-                                <td>DNI</td>
-                                <td>Apellidos y nombres</td>
-                                <td>Nº Carnet</td>
+                            <tr>
+                                <td>Id</td>
+                                <td>Unidad</td>
+                                <td>Lugar</td>
                             </tr>
                         </thead>
                         <tbody>
                             <?php do { ?>
                             <tr>
-                                <td><a href="edit_basic.php?id_per=<?php echo $row_resulta_busca['id_per']; ?>"><?php echo $row_resulta_busca['dni']; ?></a></td>
-                                <td><a href="edit_basic.php?id_per=<?php echo $row_resulta_busca['id_per']; ?>"><?php echo $row_resulta_busca['ape_pat']; ?> <?php echo $row_resulta_busca['ape_mat']; ?>, <?php echo $row_resulta_busca['nombres']; ?></a></td>
-                                <td><?php echo $row_resulta_busca['carnet_sucamec']; ?></td>
+                                <td><?php echo $row_list_unidad['id_unidad']; ?></td>
+                                <td><a href="edi_unidad.php?id_unidad=<?php echo $row_list_unidad['id_unidad']; ?>"><?php echo $row_list_unidad['nombre_unidad']; ?></a></td>
+                                <td><?php echo $row_list_unidad['lugar']; ?></td>
                             </tr>
-                            <?php } while ($row_resulta_busca = mysql_fetch_assoc($resulta_busca)); ?>
+                            <?php } while ($row_list_unidad = mysql_fetch_assoc($list_unidad)); ?>
                         </tbody>
                     </table>
                 </div> <!-- /.container -->
             </div> <!-- /.row -->
         </div> <!-- /.col-md-12 -->
+
         <?php include("assets/footer.php"); ?>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://code.jquery.com/jquery.js"></script>
@@ -97,5 +93,5 @@ $totalRows_resulta_busca = mysql_num_rows($resulta_busca);
     </body>
 </html>
 <?php
-mysql_free_result($resulta_busca);
+mysql_free_result($list_unidad);
 ?>

@@ -23,74 +23,7 @@
 
     </head>
     <body>       
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">SEIPSA S.A.C.</a>
-                </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-files-o"></i> Web <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Servicios</a></li>
-                                <li><a href="#">Productos</a></li>
-                                <li><a href="#">Soporte</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Nosotros</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Blog insertar</a></li>
-                                <li><a href="#">Blog editar</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-users"></i> Personal <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Registrar personal</a></li>
-                                <li><a href="#">Editar personal</a></li>
-                                <li><a href="#">Reporte personal</a></li>
-                                <li><a href="#">-----</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-map-marker"></i> Unidades <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Unidad nueva</a></li>
-                                <li><a href="#">Editar unidad</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-stack-overflow"></i> Almacén <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Registrar movimiento</a></li>
-                                <li><a href="#">Generar reporte</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <!--
-<form class="navbar-form navbar-left" role="search">
-<div class="form-group">
-<input type="text" class="form-control" placeholder="Buscar">
-</div>
-<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-</form>
--->
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><p class="navbar-text">Usuario: <a href="#" class="navbar-link"><strong>Otto B.</strong></a></p></li>
-                        <li><a href="#"><i class="fa fa-arrow-right"></i> Salir</a></li>
-                    </ul>
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
-        </nav>
+        <?php include("assets/menu_top.php"); ?>
         <!-- Button trigger modal -->
         <!--
 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
@@ -152,16 +85,13 @@ Launch demo modal
                 </div> <!-- .list-group -->
                 <div class="alert alert-danger"><i class="fa fa-cog fa-spin fa-2x"></i> Sitio en construcción...</div>
                 <div class="progress progress-striped active">
-                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="27" aria-valuemin="0" aria-valuemax="100" style="width: 27%">
-                        <span class="sr-only">27% Complete</span>
+                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100" style="width: 42%">
+                        <span class="sr-only">42% Complete</span>
                     </div>
                 </div> <!-- .progress-bar -->
             </div> <!-- . col-md-12 -->
         </div>   <!-- .main container  -->
-        <!-- footer -->
-        <section id="footer">
-            <p>Intranet. Versi&oacute;n &beta; 0.0.22</p>
-        </section>
+        <?php include("assets/footer.php"); ?>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://code.jquery.com/jquery.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->

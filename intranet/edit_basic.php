@@ -37,16 +37,16 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
-  $updateSQL = sprintf("UPDATE personal SET dni=%s, venc_dni=%s, estado=%s, ruc=%s, apt_reniec=%s, ape_pat=%s, ape_mat=%s, nombres=%s, img_foto=%s, grup_sang=%s, cod_seipsa=%s, est_sucamec=%s, carnet_sucamec=%s, car_suc_inicio=%s, car_suc_fin=%s, fec_nac=%s, tel_cel1=%s, tel_cel2=%s, tel_cel3=%s, cert_dom=%s, ant_polic=%s, ant_penal=%s, niv_instruccion=%s, ser_militar=%s, auto_log=%s WHERE id_per=%s",
+  $updateSQL = sprintf("UPDATE personal SET dni=%s, venc_dni=%s, ruc=%s, apt_reniec=%s, ape_pat=%s, ape_mat=%s, nombres=%s, grup_sang=%s, cod_seipsa=%s, est_sucamec=%s, carnet_sucamec=%s, car_suc_inicio=%s, car_suc_fin=%s, fec_nac=%s, tel_cel1=%s, tel_cel2=%s, tel_cel3=%s, cert_dom=%s, ant_polic=%s, ant_penal=%s, niv_instruccion=%s, ser_militar=%s, auto_log=%s WHERE id_per=%s",
                        GetSQLValueString($_POST['dni'], "text"),
                        GetSQLValueString($_POST['venc_dni'], "date"),
-                       GetSQLValueString($_POST['estado'], "int"),
+
                        GetSQLValueString($_POST['ruc'], "int"),
                        GetSQLValueString(isset($_POST['apt_reniec']) ? "true" : "", "defined","1","0"),
                        GetSQLValueString($_POST['ape_pat'], "text"),
                        GetSQLValueString($_POST['ape_mat'], "text"),
                        GetSQLValueString($_POST['nombres'], "text"),
-                       GetSQLValueString($_POST['img_foto'], "text"),
+                       
                        GetSQLValueString($_POST['grup_sang'], "text"),
                        GetSQLValueString($_POST['cod_seipsa'], "text"),
                        GetSQLValueString($_POST['est_sucamec'], "text"),
@@ -57,18 +57,14 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
                        GetSQLValueString($_POST['tel_cel1'], "text"),
                        GetSQLValueString($_POST['tel_cel2'], "text"),
                        GetSQLValueString($_POST['tel_cel3'], "text"),
-                       GetSQLValueString(isset($_POST['cert_dom']) ? "true" : "", "defined","1","0"),
-                       GetSQLValueString(isset($_POST['ant_polic']) ? "true" : "", "defined","1","0"),
-                       GetSQLValueString(isset($_POST['ant_penal']) ? "true" : "", "defined","1","0"),
                        GetSQLValueString($_POST['niv_instruccion'], "text"),
                        GetSQLValueString(isset($_POST['ser_militar']) ? "true" : "", "defined","1","0"),
-                       GetSQLValueString($_POST['auto_log'], "text"),
-                       GetSQLValueString($_POST['id_per'], "int"));
+                       GetSQLValueString($_POST['auto_log'], "text"));
 
   mysql_select_db($database_seipsa, $seipsa);
   $Result1 = mysql_query($updateSQL, $seipsa) or die(mysql_error());
 
-  $updateGoTo = "list.php";
+  $updateGoTo = "listar.php";
   if (isset($_SERVER['QUERY_STRING'])) {
     $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
     $updateGoTo .= $_SERVER['QUERY_STRING'];
@@ -109,12 +105,9 @@ $totalPages_list_to_edit = ceil($totalRows_list_to_edit/$maxRows_list_to_edit)-1
 </head>
 
 <body>
-<form action="busca.php" method="post" name="busqueda">
-<input name="ape_pat" type="text" value="" size="32" maxlength="32">
-<input name="Buscar" type="submit" value="Buscar">
-</form>
+<?php include("assets/buscar_form.php"); ?>
 
-<p align="center"><a href="list.php"> &larr; Volver </a></p>
+<p align="center"><a href="listar.php"> &larr; Volver </a></p>
 <form method="post" name="form1" action="<?php echo $editFormAction; ?>">
   <table align="center">
     <tr valign="baseline">
@@ -129,10 +122,7 @@ $totalPages_list_to_edit = ceil($totalRows_list_to_edit/$maxRows_list_to_edit)-1
       <td nowrap align="right">Venc_dni:</td>
       <td><input type="text" name="venc_dni" value="<?php echo htmlentities($row_list_to_edit['venc_dni'], ENT_COMPAT, 'utf-8'); ?>" size="32"></td>
     </tr>
-    <tr valign="baseline">
-      <td nowrap align="right">Estado:</td>
-      <td><input type="text" name="estado" value="<?php echo htmlentities($row_list_to_edit['estado'], ENT_COMPAT, 'utf-8'); ?>" size="32"></td>
-    </tr>
+
     <tr valign="baseline">
       <td nowrap align="right">Ruc:</td>
       <td><input type="text" name="ruc" value="<?php echo htmlentities($row_list_to_edit['ruc'], ENT_COMPAT, 'utf-8'); ?>" size="32"></td>
@@ -199,18 +189,6 @@ $totalPages_list_to_edit = ceil($totalRows_list_to_edit/$maxRows_list_to_edit)-1
     <tr valign="baseline">
       <td nowrap align="right">Tel_cel3:</td>
       <td><input type="text" name="tel_cel3" value="<?php echo htmlentities($row_list_to_edit['tel_cel3'], ENT_COMPAT, 'utf-8'); ?>" size="32"></td>
-    </tr>
-    <tr valign="baseline">
-      <td nowrap align="right">Cert_dom:</td>
-      <td><input type="checkbox" name="cert_dom" value=""  <?php if (!(strcmp(htmlentities($row_list_to_edit['cert_dom'], ENT_COMPAT, 'utf-8'),1))) {echo "checked=\"checked\"";} ?>></td>
-    </tr>
-    <tr valign="baseline">
-      <td nowrap align="right">Ant_polic:</td>
-      <td><input type="checkbox" name="ant_polic" value=""  <?php if (!(strcmp(htmlentities($row_list_to_edit['ant_polic'], ENT_COMPAT, 'utf-8'),1))) {echo "checked=\"checked\"";} ?>></td>
-    </tr>
-    <tr valign="baseline">
-      <td nowrap align="right">Ant_penal:</td>
-      <td><input type="checkbox" name="ant_penal" value=""  <?php if (!(strcmp(htmlentities($row_list_to_edit['ant_penal'], ENT_COMPAT, 'utf-8'),1))) {echo "checked=\"checked\"";} ?>></td>
     </tr>
     <tr valign="baseline">
       <td nowrap align="right">Niv_instruccion:</td>
